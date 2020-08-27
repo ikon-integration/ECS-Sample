@@ -8,7 +8,7 @@ plugins:
 resources:
   - ${file(config/dynamo.yml)}
   # Update your email at env.yml 
-  # - ${file(config/cloudwatchMetrics.yml)}
+  - ${file(config/cloudwatchMetrics.yml)}
 custom:
   stage: ${opt:stage, self:provider.stage}
   webpack:
