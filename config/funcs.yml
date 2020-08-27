@@ -1,0 +1,29 @@
+RestAPI:
+  handler: src/router.handler
+  vpc:
+    cidr: 10.0.0.0/16
+    subnets:
+      - 10.0.0.0/24
+      - 10.0.1.0/24
+  events:
+    - eventType: httpd
+      runtime: nodejs13
+      cpu: ${self:provider.environment.FGATE_TASK_CPU}
+      memory: ${self:provider.environment.FGATE_TASK_MEM}
+      concurrency: ${self:provider.environment.FGATE_TASK_NUM}
+      cors:
+          origin: '*'
+          allowCredentials: true
+      routes:
+        - method: ANY
+          path: "*"
+    - eventType: lambda
+      runtime: nodejs12.x
+      cors:
+          origin: '*'
+          allowCredentials: true
+      routes:
+        - method: ANY
+          path: '{proxy+}'
+        - method: ANY
+          path: '/'

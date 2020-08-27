@@ -1,0 +1,22 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm run setup-build
+  build:
+    commands:
+      - echo No build required on this repo.
+  post_build:
+    commands:
+      - |
+        if [ $CODEBUILD_BUILD_SUCCEEDING = "1" ]; then
+          if [ "$STAGE" ] ; then
+            serverless deploy --stage=${STAGE} --region=${AWS_REGION} --verbose
+          else
+            serverless deploy --stage=dev --region=${AWS_REGION} --verbose
+          fi
+        fi

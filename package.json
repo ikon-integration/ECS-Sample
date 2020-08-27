@@ -1,0 +1,49 @@
+{
+    "name": "ECS-API",
+    "version": "0.6.4",
+    "main": "index.js",
+    "dependencies": {
+        "@babel/runtime": "^7.11.2",
+        "@ikonintegration/idmclient": "^2.4.6",
+        "@ikonintegration/ikapi": "^1.5.4",
+        "aws-sdk": "^2.732.0",
+        "jsonwebtoken": "^8.5.1",
+        "node-fetch": "^2.6.0",
+        "node-jose": "^1.1.4",
+        "query-string-manipulator": "^1.2.2",
+        "randomstring": "^1.1.5",
+        "serverless": "^1.78.1",
+        "sha1": "^1.1.1",
+        "source-map-support": "^0.5.19",
+        "uuid": "^8.3.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.11.1",
+        "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+        "@babel/plugin-transform-runtime": "^7.11.0",
+        "@babel/preset-env": "^7.11.0",
+        "@ikonintegration/serverless-fargate-plugin": "^1.7.9",
+        "@ikonintegration/serverless-ikcomponents-plugin": "^0.8.2",
+        "babel-loader": "^8.1.0",
+        "babel-plugin-source-map-support": "^2.1.2",
+        "chai": "^4.2.0",
+        "chai-http": "^4.3.0",
+        "copy-webpack-plugin": "^6.0.3",
+        "serverless-cf-vars": "^0.3.2",
+        "serverless-iam-roles-per-function": "^2.0.2",
+        "serverless-plugin-scripts": "^1.0.2",
+        "serverless-webpack": "^5.3.3",
+        "webpack": "^4.44.1",
+        "webpack-node-externals": "^2.5.1"
+    },
+    "scripts": {
+        "setup": "git submodule update --init && npm run setup-build",
+        "start": "serverless offline start",
+        "setup-localdb": "serverless dynamodb install",
+        "setup-build": "npm i -g serverless && npm i"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}

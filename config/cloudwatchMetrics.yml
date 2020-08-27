@@ -1,0 +1,35 @@
+Resources:
+  #Create API Alert type
+  MainAPILogErrorMetricFilter:
+    Type: AWS::Logs::MetricFilter
+    Properties:
+      FilterPattern: ${self:provider.environment.LOG_ALERT_ESPRESSION}
+      LogGroupName: /aws/fargate/ECSDashAPIRestAPI/${self:custom.stage}/Task0
+      MetricTransformations:
+        - DefaultValue: 0
+          MetricName: ${self:service}-${self:custom.stage}-MainAPILogErrorMetric
+          MetricNamespace: IKAPI
+          MetricValue: 1
+  MainAPILogErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: ${self:service}-${self:custom.stage}-MainAPILogErrorAlarm
+      AlarmDescription: triggered when MainAPILogErrorMetricFilter finds occurences of errors on the cloud watch logs
+      Namespace: IKAPI
+      MetricName: ${self:service}-${self:custom.stage}-MainAPILogErrorMetric
+      Statistic: Sum
+      Period: '300'
+      EvaluationPeriods: 1
+      ComparisonOperator: GreaterThanThreshold
+      Threshold: 0
+      AlarmActions:
+        - !Ref AlertTopic
+      TreatMissingData: missing
+  AlertTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: ${self:service}-${self:custom.stage}-AlertTopic
+      Subscription:
+      - Endpoint:
+          ${self:provider.environment.ALERT_EMAIL}
+        Protocol: email
