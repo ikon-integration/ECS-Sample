@@ -3,7 +3,7 @@
     "version": "0.6.4",
     "main": "index.js",
     "dependencies": {
-        "@babel/runtime": "^7.11.2",
+        "@babel/runtime": "^7.19.0",
         "@ikonintegration/idmclient": "^2.4.6",
         "@ikonintegration/ikapi": "^1.5.4",
         "aws-sdk": "^2.732.0",
