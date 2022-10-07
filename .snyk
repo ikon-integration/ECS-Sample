@@ -1,0 +1,50 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - serverless > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > @serverless/utils > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > @serverless/components > @serverless/platform-client-china > @serverless/utils-china > @tencent-sdk/capi > request-promise-native > request-promise-core > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - node-jose > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - '@ikonintegration/ikapi > email-templates > lodash':
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > json-refs > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - '@ikonintegration/ikapi > email-templates > @ladjs/i18n > lodash':
+        patched: '2022-10-07T22:16:40.930Z'
+    - '@ikonintegration/ikapi > email-templates > html-to-text > lodash':
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > @serverless/components > graphlib > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > json-refs > graphlib > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > @serverless/enterprise-plugin > @serverless/event-mocks > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > @serverless/components > prettyoutput > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > @serverless/inquirer > inquirer > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > tabtab > inquirer > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > archiver > async > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > @serverless/cli > @serverless/template > graphlib > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > @serverless/components > @serverless/inquirer > inquirer > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - '@ikonintegration/ikapi > email-templates > preview-email > mailparser > html-to-text > lodash':
+        patched: '2022-10-07T22:16:40.930Z'
+    - serverless > @serverless/components > @serverless/platform-client-china > @serverless/utils-china > winston > async > lodash:
+        patched: '2022-10-07T22:16:40.930Z'
+    - '@ikonintegration/ikapi > email-templates > preview-email > pug > pug-code-gen > constantinople > babel-types > lodash':
+        patched: '2022-10-07T22:16:40.930Z'
+    - '@ikonintegration/ikapi > email-templates > preview-email > pug > pug-filters > constantinople > babel-types > lodash':
+        patched: '2022-10-07T22:16:40.930Z'
+    - '@ikonintegration/ikapi > email-templates > preview-email > pug > pug-code-gen > pug-attrs > constantinople > babel-types > lodash':
+        patched: '2022-10-07T22:16:40.930Z'
